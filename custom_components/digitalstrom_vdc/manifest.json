@@ -1,0 +1,13 @@
+{
+  "domain": "digitalstrom_vdc",
+  "name": "DigitalSTROM VDC",
+  "version": "0.1.0",
+  "documentation": "https://github.com/yourusername/ha-digitalstrom_vdc",
+  "requirements": [
+    "git+https://github.com/KarlKiel/pyvdcapi.git"
+  ],
+  "dependencies": [],
+  "codeowners": ["@yourgithub"],
+  "iot_class": "local_polling",
+  "config_flow": true
+}
