@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "documentation": "https://github.com/yourusername/ha-digitalstrom_vdc",
   "requirements": [
-    "git+https://github.com/KarlKiel/pyvdcapi.git"
+    "git+https://github.com/KarlKiel/pyvdcapi.git@v1.0.0",
+    "zeroconf",
+    "pyyaml>=6.0",
+    "protobuf>=3.20.1"
   ],
   "dependencies": [],
   "codeowners": ["@yourgithub"],

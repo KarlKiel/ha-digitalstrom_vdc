@@ -67,17 +67,21 @@ class VdcHost:
                     mac_address=mac,
                     vendor_id="homeassistant",
                     persistence_file=persistence_file,
-                    announce_service=False,
+                    announce_service=True,
                 )
                 await vdc_host.start()
                 try:
-                    # Create a default vDC using the provided parameters
+                    # Create a default vDC using the provided parameters.
+                    # Pass explicit properties to ensure required fields are set.
                     vdc = vdc_host.create_vdc(
                         name="KarlKiels Homeassistant vDC",
                         model="Homeassistant vDC",
                         model_uid="KarlKielHAvDC",
                         model_version="KarlKiels Homeassistant vDC",
+                        vendor_id="homeassistant",
+                        # Additional properties accepted by pyvdcapi will be stored
                         implementationId="x-KarlKiel-HAvDC",
+                        displayId="KarlKiels Homeassistant vDC",
                     )
                     _LOGGER.info("Created default vDC: %s", getattr(vdc, "dsuid", str(vdc)))
                 except Exception:  # pragma: no cover - defensive
